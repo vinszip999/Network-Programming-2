@@ -20,7 +20,8 @@
     {% for bookmark in bookmark_list %}
         <tr>
             <td>{{ forloop.counter }}</td>
-            <td><a href="{% url 'bookmark:detail' pk=bookmark.id %}">{{ bookmark.name }}</a></td>
+            <td><a href="{% url 'bookmark:detail' pk=bookmark.pk %}">{{ bookmark.name }}</a></td>
+{#            pk=bookmark.id로 "id"를 써도 되지만, 아직 "pk"를 많이 쓰고 있기 때문에 pk=bookmark.pk로 변경해줌 #}
             <td><a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a></td>
             <td>Edit</td>
             <td>Delete</td>
