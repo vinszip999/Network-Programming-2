@@ -25,7 +25,7 @@
             <td><a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a></td>
             <td><a href="{% url 'bookmark:edit' pk=bookmark.pk %}">Edit</a></td>
 {#            원래라면 url을 '/bookmark/edit/1' 이렇게 작성해야 하지만, 'bookmark:edit' 작성함!! #}
-            <td>Delete</td>
+            <td><a href="{% url 'bookmark:delete' pk=bookmark.pk %}">Delete</a></td>
         </tr>
     {% endfor %}
     </tbody>
