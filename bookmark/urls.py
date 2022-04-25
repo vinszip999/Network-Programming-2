@@ -6,6 +6,7 @@ from bookmark.views import BookmarkListView, BookmarkCreateView, BookmarkDetailV
 app_name = 'bookmark'
 
 urlpatterns = [
+    # path('', BookmarkListView.as_view(), name='list'),  # bookmark:list
     path('list/', BookmarkListView.as_view(), name='list'),  # bookmark:list
     path('add/', BookmarkCreateView.as_view(), name='add'),  # bookmark:add
     path('detail/<int:pk>/', BookmarkDetailView.as_view(), name='detail'),  # bookmark:detail
