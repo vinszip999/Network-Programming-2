@@ -3,8 +3,10 @@
 {% block title %}Bookmark List{% endblock %}
 
 {% block content %}
-<a href="{% url 'bookmark:add' %}">Add Bookmark</a>
-<table>
+<div class="btn-group">
+    <a href="{% url 'bookmark:add' %}" class="btn btn-success">Add Bookmark</a>
+</div>
+<table class="table">
     <thead>
     <tr>
         <th>#</th>
@@ -21,9 +23,9 @@
             <td><a href="{% url 'bookmark:detail' pk=bookmark.pk %}">{{ bookmark.name }}</a></td>
 {#            pk=bookmark.id로 "id"를 써도 되지만, 아직 "pk"를 많이 쓰고 있기 때문에 pk=bookmark.pk로 변경해줌 #}
             <td><a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a></td>
-            <td><a href="{% url 'bookmark:edit' pk=bookmark.pk %}">Edit</a></td>
+            <td><a href="{% url 'bookmark:edit' pk=bookmark.pk %}" class="btn btn-primary btn-sm">Edit</a></td>
 {#            원래라면 url을 '/bookmark/edit/1' 이렇게 작성해야 하지만, 'bookmark:edit' 작성함!! #}
-            <td><a href="{% url 'bookmark:delete' pk=bookmark.pk %}">Delete</a></td>
+            <td><a href="{% url 'bookmark:delete' pk=bookmark.pk %}" class="btn btn-danger btn-sm">Delete</a></td>
         </tr>
     {% endfor %}
     </tbody>
